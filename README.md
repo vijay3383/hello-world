@@ -1,3 +1,2 @@
 # hello-world
-hello world repo
-I'm Vijay.
+hello world. I'm Vijay.
