@@ -1,0 +1,23 @@
+# kubernetes resources to be managed my kustomize
+resources:
+- nginx-depl.yaml
+- nginx-service.yaml
+# Customizations that need to be made
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- nginx-depl.yaml
+- nginx-service.yaml
+- nginx-depl2.yaml
+  #commonAnnotations:
+  #  creator: user@example.com
+  #commonLabels:
+  #  app: frontend
+  #images:
+  #  - name: bitnami/nginx
+  #    newName: nginx
+  #    newTag: "latest"
+  #namePrefix: testing-
+  #nameSuffix: -qa
+patchesStrategicMerge:
+  - deploy-label-changes.yaml
